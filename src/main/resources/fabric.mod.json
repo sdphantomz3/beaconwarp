@@ -1,0 +1,45 @@
+{
+	"schemaVersion": 1,
+	"id": "beacon-warp",
+	"version": "${version}",
+	"name": "Beacon Warp",
+	"description": "A mod that allows teleporting to lodestones using beacons.",
+	"authors": [
+		"PhantomZ3",
+		"Drypted"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/beacon-warp/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.phantomz3.BeaconWarp"
+		],
+		"client": [
+			"com.phantomz3.BeaconWarpClient"
+		],
+		"fabric-datagen": [
+			"com.phantomz3.BeaconWarpDataGenerator"
+		]
+	},
+	"mixins": [
+		"beacon-warp.mixins.json",
+		{
+			"config": "beacon-warp.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
